@@ -26,7 +26,9 @@ export class Home extends React.Component<Props> {
       const jsonData = xml2js((await axios.get(v) as any).data);
       // console.log({ [k]: jsonData });
       let t = '';
-      if (k === 'medan') {
+      if (k === 'denpasar') {
+        t = jsonData["elements"][0]["elements"][0]["elements"][3]["elements"][7]["elements"][0]["elements"][0]["elements"][0].text; 
+      } else if (k === 'medan') {
         t = jsonData["elements"][0]["elements"][0]["elements"][3]["elements"][7]["elements"][0]["elements"][0]["elements"][0].text; 
       } else if (k === 'jakarta') {
         t = jsonData["elements"][0]["elements"][0]["elements"][3]["elements"][7]["elements"][0]["elements"][0]["elements"][0].text; 
@@ -37,14 +39,6 @@ export class Home extends React.Component<Props> {
       }
       this.setState({ [k]: t });
     }
-    const url = 'http://data.bmkg.go.id/datamkg/MEWS/DigitalForecast/DigitalForecast-Bali.xml';
-    const result = await axios.get(url);
-    const jsonData = xml2js(result.data);
-    // console.log({ jsonData });
-    const city: string = jsonData["elements"][0]["elements"][0]["elements"][3]["attributes"].description;
-    const temperature = jsonData["elements"][0]["elements"][0]["elements"][3]["elements"][7]["elements"][0]["elements"][0]["elements"][0].text;
-    // console.log({ city, temperature });
-    this.setState({ [city.toLowerCase()]: temperature });
   }
 
   render() {
