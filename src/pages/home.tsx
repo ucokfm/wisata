@@ -21,7 +21,7 @@ export class Home extends React.Component<Props> {
     // console.log({ jsonData });
     const city: string = jsonData["elements"][0]["elements"][0]["elements"][3]["attributes"].description;
     const temperature = jsonData["elements"][0]["elements"][0]["elements"][3]["elements"][7]["elements"][0]["elements"][0]["elements"][0].text;
-    console.log({ city, temperature });
+    // console.log({ city, temperature });
     this.setState({ [city.toLowerCase()]: temperature });
   }
 
