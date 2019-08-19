@@ -25,7 +25,7 @@ class BaseDetail extends React.Component<Props> {
       <div>
         <h1>Detail {city}</h1>
         <ul>
-          <li>Kisaran paket wisata per hari: Rp{data.price}</li>
+          <li>Kisaran paket wisata per hari: Rp {data.price}</li>
           <li>Jumlah kunjungan per tahun: {data.count}</li>
         </ul>
       </div>
