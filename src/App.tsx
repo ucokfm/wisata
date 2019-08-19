@@ -5,31 +5,37 @@ import './App.css';
 
 import { Dashboard, Detail, Home, ContactUs } from './pages';
 
-function App() {
-  return (
-    <Router>
-      <div>
-        <nav>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/contact-us">Contact Us</Link>
-            </li>
-            <li>
-              <Link to="/dashboard">Dashboard</Link>
-            </li>
-          </ul>
-        </nav>
+class App extends React.Component {
+  state = {
+    guests: [],
+  }
 
-        <Route path="/" exact component={Home} />
-        <Route path="/contact-us" component={ContactUs} />
-        <Route path="/detail" component={Detail} />
-        <Route path="/dashboard" component={Dashboard} />
-      </div>
-    </Router>
-  );
+  render() {
+    return (
+      <Router>
+        <div>
+          <nav>
+            <ul>
+              <li>
+                <Link to="/">Home</Link>
+              </li>
+              <li>
+                <Link to="/contact-us">Contact Us</Link>
+              </li>
+              <li>
+                <Link to="/dashboard">Dashboard</Link>
+              </li>
+            </ul>
+          </nav>
+
+          <Route path="/" exact component={Home} />
+          <Route path="/contact-us" component={ContactUs} />
+          <Route path="/detail" component={Detail} />
+          <Route path="/dashboard" component={Dashboard} />
+        </div>
+      </Router>
+    );
+  }
 }
 
 export default App;

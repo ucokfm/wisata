@@ -1,8 +1,12 @@
 import React from 'react';
 import { Formik } from 'formik';
+import { observer } from 'mobx-react';
+
+import { appStore } from '../store';
 
 interface Props {}
 
+@observer
 export class ContactUs extends React.Component<Props> {
   render() {
     return (
@@ -11,10 +15,11 @@ export class ContactUs extends React.Component<Props> {
         <Formik
           initialValues={{ name: '', email: '', message: '' }}
           onSubmit={(values) => {
-            console.log({ values });
+            appStore.guests.push(values);
+            (this.props as any).history.push('/dashboard');
           }}
         >
-          {({ values, handleChange, handleBlur, handleSubmit }) => (
+          {({ values, handleChange, handleBlur, handleSubmit, resetForm }) => (
             <form onSubmit={handleSubmit}>
               <div>
                 Nama: <input name="name" onChange={handleChange} onBlur={handleBlur} value={values.name} />
