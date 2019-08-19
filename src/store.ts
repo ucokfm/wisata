@@ -24,7 +24,7 @@ class AppStore {
     },
   }
 
-  @observable guests = [];
+  @observable guests: any[] = [];
 }
 
 export const appStore = new AppStore();
