@@ -22,7 +22,7 @@ class BaseDetail extends React.Component<Props> {
     const city: string = (this.props as any).match.params.city;
     const data = (appStore as any).cities[city];
     return (
-      <div>
+      <div style={{ padding: 30 }}>
         <h1>Detail {city}</h1>
         <ul>
           <li>Kisaran paket wisata per hari: Rp {data.price}</li>

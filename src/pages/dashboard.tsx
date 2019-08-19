@@ -9,7 +9,7 @@ interface Props {}
 export class Dashboard extends React.Component<Props> {
   render() {
     return (
-      <div>
+      <div style={{ padding: 30 }}>
         <h1>Dashboard</h1>
         <ul>
           {(appStore as any).guests.map((guest: any) => (

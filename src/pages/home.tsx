@@ -27,7 +27,7 @@ export class Home extends React.Component<Props> {
 
   render() {
     return (
-      <div>
+      <div style={{ padding: 30 }}>
         <h1>Home</h1>
         <ol>
           <li><Link to="/detail/denpasar">Denpasar: </Link>{this.state.denpasar} C</li>

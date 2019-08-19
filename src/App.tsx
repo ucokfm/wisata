@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { Menu } from 'semantic-ui-react';
 
 import './App.css';
 
@@ -13,20 +14,18 @@ class App extends React.Component {
   render() {
     return (
       <Router>
-        <div>
-          <nav>
-            <ul>
-              <li>
-                <Link to="/">Home</Link>
-              </li>
-              <li>
-                <Link to="/contact-us">Contact Us</Link>
-              </li>
-              <li>
-                <Link to="/dashboard">Dashboard</Link>
-              </li>
-            </ul>
-          </nav>
+        <div style={{ padding: 30 }}>
+          <Menu secondary>
+            <Menu.Item name="home">
+              <Link to="/">Home</Link>
+            </Menu.Item>
+            <Menu.Item name="contact-us">
+              <Link to="/contact-us">Contact Us</Link>
+            </Menu.Item>
+            <Menu.Item name="dashboard">
+              <Link to="/dashboard">Dashboard</Link>
+            </Menu.Item>
+          </Menu>
 
           <Route path="/" exact component={Home} />
           <Route path="/contact-us" component={ContactUs} />
