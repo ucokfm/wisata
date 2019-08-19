@@ -24,9 +24,7 @@ class AppStore {
     },
   }
 
-  @observable guests = [
-    { name: 'budi', message: 'hey' }
-  ];
+  @observable guests = [];
 }
 
 export const appStore = new AppStore();
