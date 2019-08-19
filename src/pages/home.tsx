@@ -30,11 +30,11 @@ export class Home extends React.Component<Props> {
       <div>
         <h1>Home</h1>
         <ol>
-          <li><Link to="/detail">Denpasar: </Link>{this.state.denpasar} C</li>
-          <li><Link to="/detail">Medan: </Link>{this.state.medan} C</li>
-          <li><Link to="/detail">Jakarta: </Link>{this.state.jakarta} C</li>
-          <li><Link to="/detail">Bandung: </Link>{this.state.bandung} C</li>
-          <li><Link to="/detail">Surabaya: </Link>{this.state.surabaya} C</li>
+          <li><Link to="/detail/denpasar">Denpasar: </Link>{this.state.denpasar} C</li>
+          <li><Link to="/detail/medan">Medan: </Link>{this.state.medan} C</li>
+          <li><Link to="/detail/jakarta">Jakarta: </Link>{this.state.jakarta} C</li>
+          <li><Link to="/detail/bandung">Bandung: </Link>{this.state.bandung} C</li>
+          <li><Link to="/detail/surabaya">Surabaya: </Link>{this.state.surabaya} C</li>
         </ol>
       </div>
     );
