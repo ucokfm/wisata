@@ -24,18 +24,18 @@ export class Home extends React.Component<Props> {
     };
     for (const [k, v] of Object.entries(urls)) {
       const jsonData = xml2js((await axios.get(v) as any).data);
-      // console.log({ [k]: jsonData });
+      console.log({ [k]: jsonData });
       let t = '';
       if (k === 'denpasar') {
         t = jsonData["elements"][0]["elements"][0]["elements"][3]["elements"][7]["elements"][0]["elements"][0]["elements"][0].text; 
       } else if (k === 'medan') {
-        t = jsonData["elements"][0]["elements"][0]["elements"][3]["elements"][7]["elements"][0]["elements"][0]["elements"][0].text; 
+        t = jsonData["elements"][0]["elements"][0]["elements"][14]["elements"][7]["elements"][0]["elements"][0]["elements"][0].text; 
       } else if (k === 'jakarta') {
-        t = jsonData["elements"][0]["elements"][0]["elements"][3]["elements"][7]["elements"][0]["elements"][0]["elements"][0].text; 
+        t = jsonData["elements"][0]["elements"][0]["elements"][2]["elements"][7]["elements"][0]["elements"][0]["elements"][0].text; 
       } else if (k === 'bandung') {
-        t = jsonData["elements"][0]["elements"][0]["elements"][3]["elements"][7]["elements"][0]["elements"][0]["elements"][0].text; 
+        t = jsonData["elements"][0]["elements"][0]["elements"][1]["elements"][7]["elements"][0]["elements"][0]["elements"][0].text; 
       } else if (k === 'surabaya') {
-        t = jsonData["elements"][0]["elements"][0]["elements"][3]["elements"][7]["elements"][0]["elements"][0]["elements"][0].text; 
+        t = jsonData["elements"][0]["elements"][0]["elements"][35]["elements"][7]["elements"][0]["elements"][0]["elements"][0].text; 
       }
       this.setState({ [k]: t });
     }
