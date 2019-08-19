@@ -18,9 +18,6 @@ function App() {
               <Link to="/contact-us">Contact Us</Link>
             </li>
             <li>
-              <Link to="/detail">Detail</Link>
-            </li>
-            <li>
               <Link to="/dashboard">Dashboard</Link>
             </li>
           </ul>

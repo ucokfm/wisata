@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import { xml2js } from 'xml-js';
+import {Link } from 'react-router-dom';
 
 interface Props {}
 
@@ -29,11 +30,11 @@ export class Home extends React.Component<Props> {
       <div>
         <h1>Home</h1>
         <ol>
-          <li>Denpasar: {this.state.denpasar} C</li>
-          <li>Medan: {this.state.medan} C</li>
-          <li>Jakarta: {this.state.jakarta} C</li>
-          <li>Bandung: {this.state.bandung} C</li>
-          <li>Surabaya: {this.state.surabaya} C</li>
+          <li><Link to="/detail">Denpasar: </Link>{this.state.denpasar} C</li>
+          <li><Link to="/detail">Medan: </Link>{this.state.medan} C</li>
+          <li><Link to="/detail">Jakarta: </Link>{this.state.jakarta} C</li>
+          <li><Link to="/detail">Bandung: </Link>{this.state.bandung} C</li>
+          <li><Link to="/detail">Surabaya: </Link>{this.state.surabaya} C</li>
         </ol>
       </div>
     );
