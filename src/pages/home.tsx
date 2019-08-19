@@ -15,6 +15,28 @@ export class Home extends React.Component<Props> {
   }
 
   async componentDidMount() {
+    const urls = {
+      denpasar: 'http://data.bmkg.go.id/datamkg/MEWS/DigitalForecast/DigitalForecast-Bali.xml',
+      jakarta: 'http://data.bmkg.go.id/datamkg/MEWS/DigitalForecast/DigitalForecast-DKIJakarta.xml',
+      medan: 'http://data.bmkg.go.id/datamkg/MEWS/DigitalForecast/DigitalForecast-SumateraUtara.xml',
+      bandung: 'http://data.bmkg.go.id/datamkg/MEWS/DigitalForecast/DigitalForecast-JawaBarat.xml',
+      surabaya: 'http://data.bmkg.go.id/datamkg/MEWS/DigitalForecast/DigitalForecast-JawaTimur.xml',
+    };
+    for (const [k, v] of Object.entries(urls)) {
+      const jsonData = xml2js((await axios.get(v) as any).data);
+      // console.log({ [k]: jsonData });
+      let t = '';
+      if (k === 'medan') {
+        t = jsonData["elements"][0]["elements"][0]["elements"][3]["elements"][7]["elements"][0]["elements"][0]["elements"][0].text; 
+      } else if (k === 'jakarta') {
+        t = jsonData["elements"][0]["elements"][0]["elements"][3]["elements"][7]["elements"][0]["elements"][0]["elements"][0].text; 
+      } else if (k === 'bandung') {
+        t = jsonData["elements"][0]["elements"][0]["elements"][3]["elements"][7]["elements"][0]["elements"][0]["elements"][0].text; 
+      } else if (k === 'surabaya') {
+        t = jsonData["elements"][0]["elements"][0]["elements"][3]["elements"][7]["elements"][0]["elements"][0]["elements"][0].text; 
+      }
+      this.setState({ [k]: t });
+    }
     const url = 'http://data.bmkg.go.id/datamkg/MEWS/DigitalForecast/DigitalForecast-Bali.xml';
     const result = await axios.get(url);
     const jsonData = xml2js(result.data);
