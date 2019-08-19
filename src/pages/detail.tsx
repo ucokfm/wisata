@@ -7,7 +7,7 @@ class BaseDetail extends React.Component<Props> {
   async componentDidMount() {
     const city: string = (this.props as any).match.params.city;
     console.log({ city });
-    
+
   }
 
   render() {
@@ -15,6 +15,10 @@ class BaseDetail extends React.Component<Props> {
     return (
       <div>
         <h1>Detail {city}</h1>
+        <ul>
+          <li>Kisaran paket wisata per hari: </li>
+          <li>Jumlah kunjungan per tahun: </li>
+        </ul>
       </div>
     );
   }
